@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Toprak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: "Al\xFCminyum Folyo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 153250576}
   - component: {fileID: 153250575}
   - component: {fileID: 153250574}
+  - component: {fileID: 153250577}
   m_Layer: 5
   m_Name: Button (11)
   m_TagString: Untagged
@@ -588,6 +589,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153250572}
   m_CullTransparentMesh: 1
+--- !u!114 &153250577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153250572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Kuru Tahta
+  buttonTexture: {fileID: 2800000, guid: 8365ecd53c3c7544d81571f2a7dc66f5, type: 3}
+  conductivityControl: 0
+  conductivity: 2
 --- !u!1 &189828584
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Limonlu Su
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -943,6 +960,7 @@ GameObject:
   - component: {fileID: 248122883}
   - component: {fileID: 248122882}
   - component: {fileID: 248122881}
+  - component: {fileID: 248122884}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -1053,6 +1071,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248122879}
   m_CullTransparentMesh: 1
+--- !u!114 &248122884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248122879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Islak Tahta
+  buttonTexture: {fileID: 2800000, guid: 6e85e082d19be4b469a637cf5c47794d, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &257746975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1099,7 @@ GameObject:
   - component: {fileID: 257746979}
   - component: {fileID: 257746978}
   - component: {fileID: 257746977}
+  - component: {fileID: 257746980}
   m_Layer: 5
   m_Name: Button (13)
   m_TagString: Untagged
@@ -1175,6 +1210,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257746975}
   m_CullTransparentMesh: 1
+--- !u!114 &257746980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257746975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: "\u015Eekerli Su"
+  buttonTexture: {fileID: 2800000, guid: deecf3e199caa2c4eab64eb37730c223, type: 3}
+  conductivityControl: 0
+  conductivity: 3
 --- !u!1 &467523614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1238,7 @@ GameObject:
   - component: {fileID: 467523618}
   - component: {fileID: 467523617}
   - component: {fileID: 467523616}
+  - component: {fileID: 467523619}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -1297,6 +1349,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467523614}
   m_CullTransparentMesh: 1
+--- !u!114 &467523619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467523614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: "Al\xFCminyum Folyo"
+  buttonTexture: {fileID: 2800000, guid: c0e06de51c6d4ac469a81dabcaac5b4a, type: 3}
+  conductivityControl: 1
+  conductivity: 0
+--- !u!1 &473239130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473239132}
+  - component: {fileID: 473239131}
+  m_Layer: 0
+  m_Name: CircuitManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &473239131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473239130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52acf09964b4602408ca65d297892590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CircuitObject: {fileID: 1191792451}
+  Circuit: {fileID: 1822701565}
+  Line: {fileID: 1320221794}
+  circuitConductivityControl: 0
+  keyControl: 0
+  UnlitLamp: {fileID: 2800000, guid: 17f199654ce680d4e90e7e62b809c641, type: 3}
+  LitLamp: {fileID: 2800000, guid: 8870349ff61c01e419743cce6bc14c12, type: 3}
+--- !u!4 &473239132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473239130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 390.73697, y: 807.5501, z: -0.29522663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476146531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Islak Tahta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1782,7 +1901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Sirke
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1917,7 +2036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Porselen Kase
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2006,6 +2125,7 @@ GameObject:
   - component: {fileID: 812341243}
   - component: {fileID: 812341242}
   - component: {fileID: 812341241}
+  - component: {fileID: 812341244}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -2116,6 +2236,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812341239}
   m_CullTransparentMesh: 1
+--- !u!114 &812341244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812341239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Sirke
+  buttonTexture: {fileID: 2800000, guid: 511fd17662a2977429f224cbbcb48b72, type: 3}
+  conductivityControl: 1
+  conductivity: 1
 --- !u!1 &816477784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: "\xC7e\u015Fme Suyu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2571,7 +2707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonName: Demir Vida
   buttonTexture: {fileID: 2800000, guid: 84ec85aee6cf5134bad20254b8d15976, type: 3}
-  conductivityControl: 0
+  conductivityControl: 1
   conductivity: 0
 --- !u!1 &1056429780
 GameObject:
@@ -2631,7 +2767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Plastik Tabak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2766,7 +2902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: "Bak\u0131r Tel"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2901,7 +3037,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b95d08ecbf7edbc4ab38d52ed0a97524, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2928,6 +3064,7 @@ GameObject:
   - component: {fileID: 1196446842}
   - component: {fileID: 1196446841}
   - component: {fileID: 1196446840}
+  - component: {fileID: 1196446843}
   m_Layer: 5
   m_Name: Button (15)
   m_TagString: Untagged
@@ -3038,6 +3175,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196446838}
   m_CullTransparentMesh: 1
+--- !u!114 &1196446843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196446838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Altin Bilezik
+  buttonTexture: {fileID: 2800000, guid: 9e93310305181cf42b01db14cee39b99, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &1209215181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3203,7 @@ GameObject:
   - component: {fileID: 1209215185}
   - component: {fileID: 1209215184}
   - component: {fileID: 1209215183}
+  - component: {fileID: 1209215186}
   m_Layer: 5
   m_Name: Button (14)
   m_TagString: Untagged
@@ -3160,6 +3314,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209215181}
   m_CullTransparentMesh: 1
+--- !u!114 &1209215186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209215181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Saf Su
+  buttonTexture: {fileID: 2800000, guid: 8cffc73dad5ae914eb9edb5aa18ac396, type: 3}
+  conductivityControl: 0
+  conductivity: 3
 --- !u!1 &1216123614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Kursun Kalem Ucu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3245,8 +3415,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3281,7 +3451,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -14.323067, y: 0, z: -17.506004, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3426,7 +3596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: "\u015Eekerli Su"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3723,7 +3893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1320221793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3997,7 +4167,7 @@ MonoBehaviour:
   buttonName: Cam Bardak
   buttonTexture: {fileID: 2800000, guid: e38d1205c7d2aad468a7a0375bf19a0f, type: 3}
   conductivityControl: 0
-  conductivity: 0
+  conductivity: 2
 --- !u!1 &1401603312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,7 +4226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Madeni Para
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -4223,6 +4393,7 @@ GameObject:
   - component: {fileID: 1448302616}
   - component: {fileID: 1448302615}
   - component: {fileID: 1448302614}
+  - component: {fileID: 1448302617}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4333,6 +4504,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448302612}
   m_CullTransparentMesh: 1
+--- !u!114 &1448302617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448302612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Tuzlu Su
+  buttonTexture: {fileID: 2800000, guid: bd04310cbe9ba9747a5cb24bcb7eef4a, type: 3}
+  conductivityControl: 1
+  conductivity: 1
 --- !u!1 &1547320484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,6 +4532,7 @@ GameObject:
   - component: {fileID: 1547320488}
   - component: {fileID: 1547320487}
   - component: {fileID: 1547320486}
+  - component: {fileID: 1547320489}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -4455,6 +4643,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547320484}
   m_CullTransparentMesh: 1
+--- !u!114 &1547320489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547320484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Madeni Para
+  buttonTexture: {fileID: 2800000, guid: 90cda65429e43cd4bae2869b999c9dfa, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &1634645914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,6 +4671,7 @@ GameObject:
   - component: {fileID: 1634645918}
   - component: {fileID: 1634645917}
   - component: {fileID: 1634645916}
+  - component: {fileID: 1634645919}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -4577,6 +4782,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634645914}
   m_CullTransparentMesh: 1
+--- !u!114 &1634645919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634645914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Limonlu Su
+  buttonTexture: {fileID: 2800000, guid: b8247b455b79d414899c3fd82a119f73, type: 3}
+  conductivityControl: 1
+  conductivity: 1
 --- !u!1 &1641442105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,7 +4856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Kuru Tahta
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -4724,6 +4945,7 @@ GameObject:
   - component: {fileID: 1651075401}
   - component: {fileID: 1651075400}
   - component: {fileID: 1651075399}
+  - component: {fileID: 1651075402}
   m_Layer: 5
   m_Name: Button (9)
   m_TagString: Untagged
@@ -4834,6 +5056,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651075397}
   m_CullTransparentMesh: 1
+--- !u!114 &1651075402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651075397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Kursun Kalem Ucu
+  buttonTexture: {fileID: 2800000, guid: 6e80525585ec6da4487d8ecf9db3bce9, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &1663083116
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,7 +5130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Tuzlu Su
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -5004,7 +5242,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1667354975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5204,7 +5442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: "Metal Kas\u0131k"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -5451,6 +5689,7 @@ GameObject:
   - component: {fileID: 1779647488}
   - component: {fileID: 1779647487}
   - component: {fileID: 1779647486}
+  - component: {fileID: 1779647489}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -5561,6 +5800,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779647484}
   m_CullTransparentMesh: 1
+--- !u!114 &1779647489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779647484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: "Metal Ka\u015F\u0131k"
+  buttonTexture: {fileID: 2800000, guid: 7aaf46eb7fe980b499cc308052bfda91, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &1792987493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,6 +5826,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1792987494}
   - component: {fileID: 1792987495}
+  - component: {fileID: 1792987496}
+  - component: {fileID: 1792987497}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -5592,6 +5849,7 @@ RectTransform:
   m_Children:
   - {fileID: 1858869738}
   - {fileID: 190503427}
+  - {fileID: 2037082256}
   m_Father: {fileID: 1348510667}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5621,6 +5879,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1792987496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792987493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2037082257}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1792987497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792987493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05069f27e6614a429dfc5f03fd26bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822701563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,7 +5993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8870349ff61c01e419743cce6bc14c12, type: 3}
+  m_Texture: {fileID: 2800000, guid: 17f199654ce680d4e90e7e62b809c641, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5825,7 +6139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Saf Su
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -5914,6 +6228,7 @@ GameObject:
   - component: {fileID: 1868545232}
   - component: {fileID: 1868545231}
   - component: {fileID: 1868545230}
+  - component: {fileID: 1868545233}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -6024,6 +6339,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868545228}
   m_CullTransparentMesh: 1
+--- !u!114 &1868545233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868545228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: "Bak\u0131r Tel"
+  buttonTexture: {fileID: 2800000, guid: 863625fb4cda3e948a299d63aa5b23ce, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &1953289786
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,6 +6367,7 @@ GameObject:
   - component: {fileID: 1953289790}
   - component: {fileID: 1953289789}
   - component: {fileID: 1953289788}
+  - component: {fileID: 1953289791}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -6146,6 +6478,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953289786}
   m_CullTransparentMesh: 1
+--- !u!114 &1953289791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953289786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Toprak
+  buttonTexture: {fileID: 2800000, guid: b95d08ecbf7edbc4ab38d52ed0a97524, type: 3}
+  conductivityControl: 1
+  conductivity: 0
 --- !u!1 &2002691235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,7 +6552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demir Vida
+  m_text: Altin Bilezik
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -6293,6 +6641,7 @@ GameObject:
   - component: {fileID: 2025144184}
   - component: {fileID: 2025144183}
   - component: {fileID: 2025144182}
+  - component: {fileID: 2025144185}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -6403,6 +6752,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025144180}
   m_CullTransparentMesh: 1
+--- !u!114 &2025144185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025144180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: "\xC7e\u015Fme Suyu"
+  buttonTexture: {fileID: 2800000, guid: 0c3767df06aa72a40aae3fc73ccd01a8, type: 3}
+  conductivityControl: 1
+  conductivity: 1
 --- !u!1 &2027294753
 GameObject:
   m_ObjectHideFlags: 0
@@ -6415,6 +6780,7 @@ GameObject:
   - component: {fileID: 2027294757}
   - component: {fileID: 2027294756}
   - component: {fileID: 2027294755}
+  - component: {fileID: 2027294758}
   m_Layer: 5
   m_Name: Button (10)
   m_TagString: Untagged
@@ -6525,6 +6891,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027294753}
   m_CullTransparentMesh: 1
+--- !u!114 &2027294758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027294753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Plastik Tabak
+  buttonTexture: {fileID: 2800000, guid: 9732d0a766b2b374a9ffc5607cbae754, type: 3}
+  conductivityControl: 0
+  conductivity: 2
+--- !u!1 &2037082255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037082256}
+  - component: {fileID: 2037082258}
+  - component: {fileID: 2037082257}
+  m_Layer: 5
+  m_Name: ButtonGrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2037082256
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037082255}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1792987494}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 10.9259, y: -48.5395}
+  m_SizeDelta: {x: 124.4593, y: 227.8285}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2037082257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037082255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21176471, g: 0.20392157, b: 0.24313726, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &2037082258
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037082255}
+  m_CullTransparentMesh: 1
 --- !u!1 &2090290701
 GameObject:
   m_ObjectHideFlags: 0
@@ -6537,6 +6992,7 @@ GameObject:
   - component: {fileID: 2090290705}
   - component: {fileID: 2090290704}
   - component: {fileID: 2090290703}
+  - component: {fileID: 2090290706}
   m_Layer: 5
   m_Name: Button (12)
   m_TagString: Untagged
@@ -6647,3 +7103,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090290701}
   m_CullTransparentMesh: 1
+--- !u!114 &2090290706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090290701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbea9a56c26c3c4ba4894b953d6d926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonName: Porselen Kase
+  buttonTexture: {fileID: 2800000, guid: d2f264c49d9ccd543b42252f588d43dd, type: 3}
+  conductivityControl: 0
+  conductivity: 2

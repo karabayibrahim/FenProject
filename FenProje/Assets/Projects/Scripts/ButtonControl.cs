@@ -4,7 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEditor;
 using Unity.VisualScripting;
-
+using Sirenix.OdinInspector;
+using UnityEngine.UI;
 public class ButtonControl : MonoBehaviour
 {
 
@@ -12,16 +13,18 @@ public class ButtonControl : MonoBehaviour
     public Texture buttonTexture;
     public bool conductivityControl;
     public IConductivity conductivity;
+
     private TextMeshProUGUI UITextMeshPro;
+    private Button button;
     void Start()
     {
-        
+        button = GetComponent<Button>();
+        button.onClick.AddListener(() => CircuitManager.Instance.OnSetObject?.Invoke(buttonName,buttonTexture,conductivityControl,conductivity));
     }
 
     private void OnValidate()
     {
-        SetName(buttonName);
-        buttonTexture=ImportExample(buttonName);
+
     }
 
     // Update is called once per frame
@@ -42,5 +45,10 @@ public class ButtonControl : MonoBehaviour
         return t;
     }
 
-
+    [Button]
+    private void SetTexture()
+    {
+        SetName(buttonName);
+        buttonTexture = ImportExample(buttonName);
+    }
 }
