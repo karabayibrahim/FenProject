@@ -4,12 +4,16 @@ using UnityEngine;
 using System;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using TMPro;
+using Sirenix.OdinInspector.Editor;
 
 public class CircuitManager : MonoBehaviour
 {
     public static CircuitManager instance=null;
     public Action<string,Texture,bool,IConductivity> OnSetObject;
+    public Action<bool> OnSetObjectForKey;
     public Action<bool> OnSetKeyObject;
+    public KeyButtonControl KeyButtonControl;
 
     [SerializeField] private RawImage CircuitObject;
     [SerializeField] private RawImage Circuit;
@@ -18,6 +22,11 @@ public class CircuitManager : MonoBehaviour
     [SerializeField] private bool keyControl;
     [SerializeField] private Texture UnlitLamp;
     [SerializeField] private Texture LitLamp;
+    [SerializeField] private TextMeshProUGUI NotificationText;
+    [SerializeField] private List<UnityEngine.UIElements.Image> ImagesKey = new List<UnityEngine.UIElements.Image>();
+
+    private IConductivity circuitConductivityType;
+    private string buttonNameCircuit;
     public static CircuitManager Instance
     {
         get
@@ -33,6 +42,7 @@ public class CircuitManager : MonoBehaviour
     {
         OnSetObject += SetCurcuitStatus;
         OnSetKeyObject += SetKeyStatus;
+        OnSetObjectForKey += SetKeyStatus;
     }
 
     // Update is called once per frame
@@ -45,10 +55,14 @@ public class CircuitManager : MonoBehaviour
     {
         CircuitObject.texture = objectTexture;
         circuitConductivityControl = conductivityControl;
+        circuitConductivityType = conductivity;
+        buttonNameCircuit = buttonName;
+        
     }
 
     private void SetKeyStatus(bool keyStatus)
     {
+        keyStatus = KeyButtonControl.MyStatus;
         keyControl = keyStatus;
         CurcuitStatus();
     }
@@ -58,10 +72,23 @@ public class CircuitManager : MonoBehaviour
         if (!keyControl && circuitConductivityControl)
         {
             StartCoroutine(TimerCircuitStatus(LitLamp,true));
+            SetNotification(NotificationText,buttonNameCircuit,circuitConductivityType);
+        }
+        else if (!keyControl && !circuitConductivityControl)
+        {
+            SetNotification(NotificationText, buttonNameCircuit, circuitConductivityType);
         }
         else
         {
-            StartCoroutine(TimerCircuitStatus(UnlitLamp,false));
+            if (!keyControl)
+            {
+                StartCoroutine(TimerCircuitStatus(UnlitLamp, false));
+                SetNotification(NotificationText, buttonNameCircuit, circuitConductivityType);
+            }
+            else
+            {
+                StartCoroutine(TimerCircuitStatus(UnlitLamp, false));
+            }
         }
     }
 
@@ -70,5 +97,36 @@ public class CircuitManager : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         Circuit.texture = texture;
         Line.gameObject.SetActive(status);
+    }
+
+    private void SetNotification(TextMeshProUGUI textNot, string buttonName,IConductivity type)
+    {
+        switch (type)
+        {
+            case IConductivity.NONE:
+                textNot.text = "Devreye bir obje ekleyiniz.";
+                // code block
+                break;
+            case IConductivity.SOLIDCONDUCTOR:
+                textNot.text = $"'{buttonName}'"+" "+"katý bir iletkendir.";
+                // code block
+                break;
+            case IConductivity.SOLIDINSULATION:
+                textNot.text = $"'{buttonName}'" + " " + "katý bir yalýtkandýr.";
+                // code block
+                break;
+            case IConductivity.LIQUIDCONTUCTOR:
+                textNot.text = $"'{buttonName}'" + " " + "sývý bir iletkendir.";
+                // code block
+                break;
+            case IConductivity.LIQUIDINSULANT:
+                textNot.text = $"'{buttonName}'" + " " + "sývý bir yalýtkandýr.";
+                // code block
+                break;
+            default:
+                textNot.text = "";
+                // code block
+                break;
+        }
     }
 }

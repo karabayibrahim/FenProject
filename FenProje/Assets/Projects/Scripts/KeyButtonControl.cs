@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows.Speech;
 
 public class KeyButtonControl : MonoBehaviour
 {
@@ -27,13 +28,13 @@ public class KeyButtonControl : MonoBehaviour
     private void OnStateChanged()
     {
         myAnimator.SetBool("KeyStatus",MyStatus);
-        Debug.Log(MyStatus);
     }
 
     void Start()
     {
         myButton = GetComponent<Button>();
         myAnimator = GetComponent<Animator>();
+        CircuitManager.Instance.OnSetObjectForKey += SetObjectKeyStatus;
         myButton.onClick.AddListener(SetButtonStatus);
         myButton.onClick.AddListener(() => CircuitManager.Instance.OnSetKeyObject?.Invoke(MyStatus));
     }
@@ -44,6 +45,11 @@ public class KeyButtonControl : MonoBehaviour
         else { MyStatus = true;}
     }
 
+    private void SetObjectKeyStatus(bool keyStatus)
+    {
+        keyStatus = true;
+        MyStatus = keyStatus;
+    }
 
 
     // Update is called once per frame

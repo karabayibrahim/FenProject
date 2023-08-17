@@ -20,6 +20,7 @@ public class ButtonControl : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(() => CircuitManager.Instance.OnSetObject?.Invoke(buttonName,buttonTexture,conductivityControl,conductivity));
+        button.onClick.AddListener(() => CircuitManager.Instance.OnSetObjectForKey?.Invoke(CircuitManager.Instance.KeyButtonControl.MyStatus));
     }
 
     private void OnValidate()
