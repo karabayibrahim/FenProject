@@ -5,13 +5,12 @@ using System;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
-using Sirenix.OdinInspector.Editor;
 
 public class CircuitManager : MonoBehaviour
 {
     public static CircuitManager instance=null;
     public Action<string,Texture,bool,IConductivity> OnSetObject;
-    public Action<bool> OnSetObjectForKey;
+    public Action OnSetObjectForKey;
     public Action<bool> OnSetKeyObject;
     public KeyButtonControl KeyButtonControl;
 
@@ -23,7 +22,7 @@ public class CircuitManager : MonoBehaviour
     [SerializeField] private Texture UnlitLamp;
     [SerializeField] private Texture LitLamp;
     [SerializeField] private TextMeshProUGUI NotificationText;
-    [SerializeField] private List<UnityEngine.UIElements.Image> ImagesKey = new List<UnityEngine.UIElements.Image>();
+    [SerializeField] private GameObject handObject;
 
     private IConductivity circuitConductivityType;
     private string buttonNameCircuit;
@@ -42,7 +41,8 @@ public class CircuitManager : MonoBehaviour
     {
         OnSetObject += SetCurcuitStatus;
         OnSetKeyObject += SetKeyStatus;
-        OnSetObjectForKey += SetKeyStatus;
+        KeyButtonControl.OnChangeKeyState += SetKeyStatus;
+        //OnSetObjectForKey += SetKeyStatus;
     }
 
     // Update is called once per frame
@@ -71,23 +71,27 @@ public class CircuitManager : MonoBehaviour
     {
         if (!keyControl && circuitConductivityControl)
         {
+            HandActiveContol(handObject);
             StartCoroutine(TimerCircuitStatus(LitLamp,true));
             SetNotification(NotificationText,buttonNameCircuit,circuitConductivityType);
         }
         else if (!keyControl && !circuitConductivityControl)
         {
+            HandActiveContol(handObject);
             SetNotification(NotificationText, buttonNameCircuit, circuitConductivityType);
         }
         else
         {
             if (!keyControl)
             {
+                HandActiveContol(handObject);
                 StartCoroutine(TimerCircuitStatus(UnlitLamp, false));
                 SetNotification(NotificationText, buttonNameCircuit, circuitConductivityType);
             }
             else
             {
                 StartCoroutine(TimerCircuitStatus(UnlitLamp, false));
+                CloseKeyNotificaiotn(NotificationText, handObject);
             }
         }
     }
@@ -127,6 +131,20 @@ public class CircuitManager : MonoBehaviour
                 textNot.text = "";
                 // code block
                 break;
+        }
+    }
+
+    private void CloseKeyNotificaiotn(TextMeshProUGUI notificationText,GameObject handObj)
+    {
+        notificationText.text = "Anahtarý kapatýnýz.";
+        handObj.SetActive(true);
+    }
+    
+    private void HandActiveContol(GameObject handObj)
+    {
+        if (handObj)
+        {
+            handObj.SetActive(false);
         }
     }
 }

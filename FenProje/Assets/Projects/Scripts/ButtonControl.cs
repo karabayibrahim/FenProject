@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
-using Unity.VisualScripting;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
+
 public class ButtonControl : MonoBehaviour
 {
 
@@ -20,7 +20,7 @@ public class ButtonControl : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(() => CircuitManager.Instance.OnSetObject?.Invoke(buttonName,buttonTexture,conductivityControl,conductivity));
-        button.onClick.AddListener(() => CircuitManager.Instance.OnSetObjectForKey?.Invoke(CircuitManager.Instance.KeyButtonControl.MyStatus));
+        button.onClick.AddListener(() => CircuitManager.Instance.OnSetObjectForKey?.Invoke());
     }
 
     private void OnValidate()
@@ -38,6 +38,7 @@ public class ButtonControl : MonoBehaviour
         UITextMeshPro=GetComponentInChildren<TextMeshProUGUI>();
         UITextMeshPro.text = name;
     }
+#if UNITY_EDITOR
     [MenuItem("AssetDatabase/LoadAssetExample")]
     private Texture ImportExample(string _buttonName)
     {
@@ -45,11 +46,13 @@ public class ButtonControl : MonoBehaviour
         Texture2D t = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Projects/Sprites/ObjectsSprites/"+_buttonName+".png", typeof(Texture2D));
         return t;
     }
-
+#endif
+#if UNITY_EDITOR
     [Button]
     private void SetTexture()
     {
         SetName(buttonName);
         buttonTexture = ImportExample(buttonName);
     }
+#endif
 }
