@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -112,19 +112,19 @@ public class CircuitManager : MonoBehaviour
                 // code block
                 break;
             case IConductivity.SOLIDCONDUCTOR:
-                textNot.text = $"'{buttonName}'"+" "+"katý bir iletkendir.";
+                textNot.text = $"'{buttonName}'"+" "+"katÄ± bir iletkendir.";
                 // code block
                 break;
             case IConductivity.SOLIDINSULATION:
-                textNot.text = $"'{buttonName}'" + " " + "katý bir yalýtkandýr.";
+                textNot.text = $"'{buttonName}'" + " " + "katÄ± bir yalÄ±tkandÄ±r.";
                 // code block
                 break;
             case IConductivity.LIQUIDCONTUCTOR:
-                textNot.text = $"'{buttonName}'" + " " + "sývý bir iletkendir.";
+                textNot.text = $"'{buttonName}'" + " " + "sÄ±vÄ± bir iletkendir.";
                 // code block
                 break;
             case IConductivity.LIQUIDINSULANT:
-                textNot.text = $"'{buttonName}'" + " " + "sývý bir yalýtkandýr.";
+                textNot.text = $"'{buttonName}'" + " " + "sÄ±vÄ± bir yalÄ±tkandÄ±r.";
                 // code block
                 break;
             default:
@@ -136,7 +136,7 @@ public class CircuitManager : MonoBehaviour
 
     private void CloseKeyNotificaiotn(TextMeshProUGUI notificationText,GameObject handObj)
     {
-        notificationText.text = "Anahtarý kapatýnýz.";
+        notificationText.text = "AnahtarÄ± kapatÄ±nÄ±z.";
         handObj.SetActive(true);
     }
     
