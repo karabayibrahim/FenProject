@@ -26,7 +26,7 @@ public class ConnectionManager : MonoBehaviour {
 	}
 
 	[SerializeField] Connection connectionPrefab;
-	[SerializeField] List<Connection> connections = new List<Connection>();
+	public List<Connection> connections = new List<Connection>();
 
 	public static Connection FindConnection(RectTransform t1, RectTransform t2) {
 		if (!instance) return null;
