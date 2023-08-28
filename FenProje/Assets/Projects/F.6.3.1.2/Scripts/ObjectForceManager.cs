@@ -26,6 +26,12 @@ public class ObjectForceManager : MonoBehaviour
     private Animator anim;
     private string animTrigger;
     private int animSpeed;
+    private int id;
+    private int temp0;
+    private int temp1;
+    private GameObject closeObj1;
+    private GameObject closeObj2;
+
     void Start()
     {
         moveButton.onClick.AddListener(StartAnim);
@@ -40,6 +46,11 @@ public class ObjectForceManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetId(int _id)
+    {
+        id = _id;
     }
 
     public void LeftValues(int value)
@@ -121,11 +132,11 @@ public class ObjectForceManager : MonoBehaviour
         {
             if (mainObj==leftObject)
             {
-                leftForces += force;
+                leftForces=SetForce(force, leftForces);
             }
             else if (mainObj==rightObject) 
-            { 
-                rightForces += force;
+            {
+                rightForces = SetForce(force, rightForces);
             }
             resultantforcehorizontal = leftForces - rightForces;
             Debug.Log(resultantforcehorizontal);
@@ -135,6 +146,7 @@ public class ObjectForceManager : MonoBehaviour
                 animSpeed = -resultantforcehorizontal;
                 Debug.Log("Sola Haraket");
                 resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcehorizontal).ToString() + "N";
+                CloseObjects(leftObject, rightObject);
             }
             else if (resultantforcehorizontal>0)
             {
@@ -142,6 +154,7 @@ public class ObjectForceManager : MonoBehaviour
                 resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
                 Debug.Log("Saða Hareket");
                 animTrigger = "Right";
+                CloseObjects(leftObject, rightObject);
 
             }
             else
@@ -156,11 +169,11 @@ public class ObjectForceManager : MonoBehaviour
         {
             if (mainObj==upObject)
             {
-                upForces += force;
+                upForces = SetForce(force, upForces);
             }
             else if(mainObj==downObject) 
             {
-                downForces += force;
+                downForces = SetForce(force, downForces);
             }
             resultantforcevertical = upForces - downForces;
             Debug.Log(resultantforcevertical);
@@ -170,6 +183,7 @@ public class ObjectForceManager : MonoBehaviour
                 animTrigger = "Up";
                 animSpeed = -resultantforcevertical;
                 resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcevertical).ToString() + "N";
+                CloseObjects(upObject, downObject);
             }
             else if (resultantforcevertical > 0)
             {
@@ -177,6 +191,7 @@ public class ObjectForceManager : MonoBehaviour
                 Debug.Log("Aþaðý Hareket");
                 animTrigger = "Down";
                 animSpeed = resultantforcevertical;
+                CloseObjects(upObject, downObject);
             }
             else
             {
@@ -190,8 +205,39 @@ public class ObjectForceManager : MonoBehaviour
 
     private void StartAnim()
     {
+        closeObj1.SetActive(false);
+        closeObj2.SetActive(false);
         resultantObj.SetActive(false);
         anim.speed = animSpeed;
         anim.SetTrigger(animTrigger);
+    }
+
+    private int SetForce(int _force,int forces)
+    {
+        if (id == 0)
+        {
+            if (temp0 != 0)
+            {
+                forces -= temp0;
+            }
+            forces += _force;
+            temp0 = _force;
+        }
+        else
+        {
+            if (temp1 != 0)
+            {
+                forces -= temp1;
+            }
+            forces += _force;
+            temp1 = _force;
+        }
+        return forces;
+    }
+
+    private void CloseObjects(GameObject obj1,GameObject obj2)
+    {
+        closeObj1 = obj1;
+        closeObj2 = obj2;
     }
 }
