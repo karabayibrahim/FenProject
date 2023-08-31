@@ -43,6 +43,7 @@ public class ButtonControl : MonoBehaviour
     private Texture ImportExample(string _buttonName)
     {
         _buttonName = buttonName.Replace(" ", "");
+        //Konum deðiþtiðinde pathde deðiþir.
         Texture2D t = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Projects/Sprites/ObjectsSprites/"+_buttonName+".png", typeof(Texture2D));
         return t;
     }

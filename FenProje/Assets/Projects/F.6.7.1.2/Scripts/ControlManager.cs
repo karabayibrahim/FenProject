@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlManager : MonoSingleton<ControlManager>
 {
@@ -13,13 +14,17 @@ public class ControlManager : MonoSingleton<ControlManager>
     public NodeControl FirstSelect = null;
     public NodeControl SecondSelect = null;
     public Connection connection;
+    public Coroutine Mycoroutine;
     [SerializeField] private Image target;
     [SerializeField] Canvas scaler;
     [SerializeField] private GameObject checkObj;
     [SerializeField] private GameObject crossObj;
+    [SerializeField] private Button retryButton;
+    [SerializeField] private GameObject completePanel;
     [SerializeField] private List<Connection> connectionsList = new List<Connection>();
     void Start()
     {
+        retryButton.onClick.AddListener(ResetScene);
         foreach (var item in ConnectionManager.instance.connections)
         {
             if (!item.CompareTag("Target"))
@@ -42,6 +47,10 @@ public class ControlManager : MonoSingleton<ControlManager>
     {
         if (FirstSelect.id == SecondSelect.id && FirstSelect.name != SecondSelect.name)
         {
+            //StopCoroutine(Mycoroutine);
+            //if (FirstSelect.myCoroutine != null)
+            //{
+            //}
             FirstSelect.myConnectObject.SetActive(true);
             connectionsList.Remove(FirstSelect.myConnectObject.GetComponent<Connection>());
             ObjectActivetedControl(checkObj, true);
@@ -50,6 +59,10 @@ public class ControlManager : MonoSingleton<ControlManager>
         }
         else
         {
+            //StopCoroutine(Mycoroutine);
+            //if (FirstSelect.myCoroutine != null)
+            //{
+            //}
             ObjectActivetedControl(crossObj, true);
             //Debug.Log("Yanlis");
         }
@@ -78,8 +91,13 @@ public class ControlManager : MonoSingleton<ControlManager>
     {
         if (connectionsList.Count<=0)
         {
-            Debug.Log("Bitti");
+            completePanel.gameObject.SetActive(true);
         }
+    }
+
+    private void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ObjectActivetedControl(GameObject activeObject,bool activecheck)
