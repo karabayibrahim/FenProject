@@ -38,7 +38,6 @@ public class ConnectionManager : MonoBehaviour {
 				return connection;
 			}
 		}
-
 		return null;
 	}
 

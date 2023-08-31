@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +16,7 @@ public class ObjectForceManager : MonoBehaviour
     [SerializeField] private TMP_Text resultanttext;
     [SerializeField] private GameObject resultantObj;
     [SerializeField] private UnityEngine.UI.Button moveButton;
+    [SerializeField] private ResultantId myresultant;
 
     private int leftForces;
     private int rightForces;
@@ -29,8 +30,10 @@ public class ObjectForceManager : MonoBehaviour
     private int id;
     private int temp0;
     private int temp1;
+    private int resultantInput;
     private GameObject closeObj1;
     private GameObject closeObj2;
+    private bool resultantCheck = false;
 
     void Start()
     {
@@ -77,30 +80,30 @@ public class ObjectForceManager : MonoBehaviour
         switch (value)
         {
             case 0:
-                //Debug.Log("0 seçtin");
+                //Debug.Log("0 seÃ§tin");
                 break;
             case 1:
                 ObjectControl(obj,1);
                 //ObjectControl(obj,1);
-                //Debug.Log("1 seçtin");
+                //Debug.Log("1 seÃ§tin");
                 break;
             case 2:
                 ObjectControl(obj,2);
                 //ObjectControl(obj, 2);
-                //Debug.Log("2 seçtin");
+                //Debug.Log("2 seÃ§tin");
                 break;
             case 3:
                 ObjectControl(obj,3);
                 //ObjectControl(obj,3);
-                //Debug.Log("3 seçtin");
+                //Debug.Log("3 seÃ§tin");
                 break;
             case 4:
                 ObjectControl(obj,4);
                 //ObjectControl(obj, 4);
-                //Debug.Log("4 seçtin");
+                //Debug.Log("4 seÃ§tin");
                 break;
             default:
-                //Debug.Log("0 seçtin");
+                //Debug.Log("0 seÃ§tin");
                 break;
         }
     }
@@ -145,21 +148,21 @@ public class ObjectForceManager : MonoBehaviour
                 animTrigger = "Left";
                 animSpeed = -resultantforcehorizontal;
                 Debug.Log("Sola Haraket");
-                resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcehorizontal).ToString() + "N";
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + (-resultantforcehorizontal).ToString() + "N";
                 CloseObjects(leftObject, rightObject);
             }
             else if (resultantforcehorizontal>0)
             {
                 animSpeed = resultantforcehorizontal;
-                resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
-                Debug.Log("Saða Hareket");
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
+                Debug.Log("SaÃ°a Hareket");
                 animTrigger = "Right";
                 CloseObjects(leftObject, rightObject);
 
             }
             else
             {
-                resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
                 Debug.Log("Hareketsiz");
             }
             upObject.SetActive(false);
@@ -179,23 +182,23 @@ public class ObjectForceManager : MonoBehaviour
             Debug.Log(resultantforcevertical);
             if (resultantforcevertical < 0)
             {
-                Debug.Log("Yukarý Haraket");
+                Debug.Log("YukarÃ½ Haraket");
                 animTrigger = "Up";
                 animSpeed = -resultantforcevertical;
-                resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcevertical).ToString() + "N";
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + (-resultantforcevertical).ToString() + "N";
                 CloseObjects(upObject, downObject);
             }
             else if (resultantforcevertical > 0)
             {
-                resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
-                Debug.Log("Aþaðý Hareket");
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
+                Debug.Log("AÃ¾aÃ°Ã½ Hareket");
                 animTrigger = "Down";
                 animSpeed = resultantforcevertical;
                 CloseObjects(upObject, downObject);
             }
             else
             {
-                resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
+                //resultanttext.text = "BileÃ¾ke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
                 Debug.Log("Hareketsiz");
             }
             leftObject.SetActive(false);
@@ -239,5 +242,50 @@ public class ObjectForceManager : MonoBehaviour
     {
         closeObj1 = obj1;
         closeObj2 = obj2;
+    }
+
+    public void ReadResultantText(string _string)
+    {
+        if (!resultantCheck)
+        {
+            Debug.Log("LÃ¼tfen bileÅŸke kuvveti doÄŸru alana giriniz");
+        }
+        else
+        {
+            if (InputStringControl(_string))
+            {
+                resultantInput = Int32.Parse(_string);
+                Debug.Log("BileÅŸke kontrol");
+            }
+            else
+            {
+                Debug.Log("LÃ¼tfen Bir SayÄ± Giriniz");
+            }
+        }
+        
+    }
+
+    private bool InputStringControl(string _s)
+    {
+        foreach (char item in _s)
+        {
+            if (!Char.IsNumber(item))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public void ResultantIdControl(int _id)
+    {
+        if (myresultant.Id==_id)
+        {
+            resultantCheck = true;
+        }
+        else
+        {
+            resultantCheck = false;
+        }
+
     }
 }
