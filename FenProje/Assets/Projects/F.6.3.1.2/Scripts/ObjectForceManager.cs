@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 
 public class ObjectForceManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class ObjectForceManager : MonoBehaviour
     [SerializeField] private GameObject resultantObj;
     [SerializeField] private UnityEngine.UI.Button moveButton;
     [SerializeField] private ResultantId myresultant;
+    [SerializeField] private TMP_Text notificationText;
+    [SerializeField] private GameObject notificationPanel;
 
     private int leftForces;
     private int rightForces;
@@ -230,7 +233,8 @@ public class ObjectForceManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Yanlış Değer");
+            SetNotification("Yanlış Değer Girdiniz.");
+            //Debug.Log("Yanlış Değer");
         }
         
     }
@@ -268,7 +272,8 @@ public class ObjectForceManager : MonoBehaviour
     {
         if (!resultantCheck)
         {
-            Debug.Log("Lütfen bileşke kuvveti doğru alana giriniz");
+            SetNotification("Lütfen bileşke kuvveti doğru alana giriniz");
+            //Debug.Log("Lütfen bileşke kuvveti doğru alana giriniz");
         }
         else
         {
@@ -279,7 +284,8 @@ public class ObjectForceManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Lütfen Bir Sayı Giriniz");
+                SetNotification("Lütfen Bir Sayı Giriniz");
+                //Debug.Log("Lütfen Bir Sayı Giriniz");
             }
         }
         
@@ -295,6 +301,19 @@ public class ObjectForceManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void SetNotification(string _string)
+    {
+        notificationPanel.SetActive(true);
+        notificationText.text= _string;
+        StartCoroutine(TimerNotification());
+    }
+
+    private IEnumerator TimerNotification()
+    {
+        yield return new WaitForSeconds(2f);
+        notificationPanel.SetActive(false);
     }
 
     private void ResultantValueControl(int _resultantValue,GameObject obj1,GameObject obj2,string animString,bool negativeControl)
