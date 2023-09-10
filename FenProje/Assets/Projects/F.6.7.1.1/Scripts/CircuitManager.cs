@@ -13,7 +13,7 @@ public class CircuitManager : MonoBehaviour
     public Action OnSetObjectForKey;
     public Action<bool> OnSetKeyObject;
     public KeyButtonControl KeyButtonControl;
-
+    
     [SerializeField] private RawImage CircuitObject;
     [SerializeField] private RawImage Circuit;
     [SerializeField] private RawImage Line;
@@ -48,7 +48,7 @@ public class CircuitManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     private void SetCurcuitStatus(string buttonName,Texture objectTexture,bool conductivityControl,IConductivity conductivity)
