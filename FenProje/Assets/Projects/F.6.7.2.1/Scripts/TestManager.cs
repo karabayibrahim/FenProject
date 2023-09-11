@@ -50,5 +50,16 @@ public class TestManager : MonoBehaviour
         Obj.SetActive(true);
     }
 
+    public void TrueAnswerAfterObject(GameObject Obj)
+    {
+        StartCoroutine(TrueAnswerTimer(Obj));
+    }
+
+    private IEnumerator TrueAnswerTimer(GameObject Obj) 
+    {
+        yield return new WaitForSeconds(1f);
+        Obj.SetActive(true);
+    }
+
 
 }
