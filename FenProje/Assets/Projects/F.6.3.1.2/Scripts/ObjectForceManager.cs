@@ -11,9 +11,13 @@ using Unity.VisualScripting.Antlr3.Runtime;
 public class ObjectForceManager : MonoBehaviour
 {
     [SerializeField] private GameObject leftObject;
+    [SerializeField] private GameObject leftIcon;
     [SerializeField] private GameObject rightObject;
+    [SerializeField] private GameObject rightIcon;
     [SerializeField] private GameObject upObject;
+    [SerializeField] private GameObject upIcon;
     [SerializeField] private GameObject downObject;
+    [SerializeField] private GameObject downIcon;
     [SerializeField] private TMP_Text resultanttext;
     [SerializeField] private GameObject resultantObj;
     [SerializeField] private UnityEngine.UI.Button moveButton;
@@ -37,6 +41,8 @@ public class ObjectForceManager : MonoBehaviour
     private int resultantValue;
     private GameObject closeObj1;
     private GameObject closeObj2;
+    private GameObject closeIcon1;
+    private GameObject closeIcon2;
     private bool resultantCheck = false;
 
     void Start()
@@ -84,6 +90,7 @@ public class ObjectForceManager : MonoBehaviour
         switch (value)
         {
             case 0:
+                ObjectControl(obj, 0);
                 //Debug.Log("0 seçtin");
                 break;
             case 1:
@@ -145,35 +152,11 @@ public class ObjectForceManager : MonoBehaviour
             {
                 rightForces = SetForce(force, rightForces);
             }
-            resultantforcehorizontal = leftForces - rightForces;
-            Debug.Log(resultantforcehorizontal);
-            if (resultantforcehorizontal < 0) 
-            {
-                ResultantValueControl(resultantforcehorizontal, leftObject, rightObject, "Left", true);
-                //animTrigger = "Left";
-                //animSpeed = -resultantforcehorizontal;
-                //Debug.Log("Sola Haraket");
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcehorizontal).ToString() + "N";
-                //CloseObjects(leftObject, rightObject);
-            }
-            else if (resultantforcehorizontal>0)
-            {
-                ResultantValueControl(resultantforcehorizontal, leftObject, rightObject, "Right", false);
-
-                //animSpeed = resultantforcehorizontal;
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
-                //Debug.Log("Saða Hareket");
-                //animTrigger = "Right";
-                //CloseObjects(leftObject, rightObject);
-
-            }
-            else
-            {
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
-                Debug.Log("Hareketsiz");
-            }
+            
             upObject.SetActive(false);
+            upIcon.SetActive(false);
             downObject.SetActive(false);
+            downIcon.SetActive(false);
         }
         else if (mainObj == upObject || mainObj == downObject)
         {
@@ -185,46 +168,94 @@ public class ObjectForceManager : MonoBehaviour
             {
                 downForces = SetForce(force, downForces);
             }
-            resultantforcevertical = upForces - downForces;
-            Debug.Log(resultantforcevertical);
-            if (resultantforcevertical < 0)
-            {
-                ResultantValueControl(resultantforcevertical, upObject, downObject, "Up", true);
-
-                //Debug.Log("Yukarý Haraket");
-                //animTrigger = "Up";
-                //animSpeed = -resultantforcevertical;
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcevertical).ToString() + "N";
-                //CloseObjects(upObject, downObject);
-            }
-            else if (resultantforcevertical > 0)
-            {
-                ResultantValueControl(resultantforcevertical, upObject, downObject, "Down", false);
-
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
-                //Debug.Log("Aþaðý Hareket");
-                //animTrigger = "Down";
-                //animSpeed = resultantforcevertical;
-                //CloseObjects(upObject, downObject);
-            }
-            else
-            {
-                //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
-                Debug.Log("Hareketsiz");
-            }
+            
             leftObject.SetActive(false);
+            leftIcon.SetActive(false);
             rightObject.SetActive(false);
+            rightIcon.SetActive(false);
         }
     }
 
     private void StartAnim()
     {
+        if (leftForces > rightForces)
+        {
+            resultantforcehorizontal = leftForces - rightForces;
+        }
+        else
+        {
+            resultantforcehorizontal = rightForces - leftForces;
+        }
+        //resultantforcehorizontal = leftForces - rightForces;
+        Debug.Log(resultantforcehorizontal);
+        if (resultantforcehorizontal < 0)
+        {
+            ResultantValueControl(resultantforcehorizontal, leftObject, rightObject,leftIcon,rightIcon, "Left", true);
+            //animTrigger = "Left";
+            //animSpeed = -resultantforcehorizontal;
+            //Debug.Log("Sola Haraket");
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcehorizontal).ToString() + "N";
+            //CloseObjects(leftObject, rightObject);
+        }
+        else if (resultantforcehorizontal > 0)
+        {
+            ResultantValueControl(resultantforcehorizontal, leftObject, rightObject,leftIcon,rightIcon, "Right", false);
+
+            //animSpeed = resultantforcehorizontal;
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
+            //Debug.Log("Saða Hareket");
+            //animTrigger = "Right";
+            //CloseObjects(leftObject, rightObject);
+
+        }
+        else
+        {
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcehorizontal.ToString() + "N";
+            Debug.Log("Hareketsiz");
+        }
+        if (upForces > downForces)
+        {
+            resultantforcevertical = upForces - downForces;
+        }
+        else
+        {
+            resultantforcevertical = downForces - upForces;
+        }
+        //resultantforcevertical = upForces - downForces;
+        Debug.Log(resultantforcevertical);
+        if (resultantforcevertical < 0)
+        {
+            ResultantValueControl(resultantforcevertical, upObject, downObject,upIcon,downIcon, "Up", true);
+
+            //Debug.Log("Yukarý Haraket");
+            //animTrigger = "Up";
+            //animSpeed = -resultantforcevertical;
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + (-resultantforcevertical).ToString() + "N";
+            //CloseObjects(upObject, downObject);
+        }
+        else if (resultantforcevertical > 0)
+        {
+            ResultantValueControl(resultantforcevertical, upObject, downObject,upIcon,downIcon, "Down", false);
+
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
+            //Debug.Log("Aþaðý Hareket");
+            //animTrigger = "Down";
+            //animSpeed = resultantforcevertical;
+            //CloseObjects(upObject, downObject);
+        }
+        else
+        {
+            //resultanttext.text = "Bileþke Kuvvet:" + " " + resultantforcevertical.ToString() + "N";
+            Debug.Log("Hareketsiz");
+        }
         if (resultantInput == resultantValue)
         {
-            if (closeObj1!=null||closeObj2!=null)
+            if (closeObj1!=null||closeObj2!=null||closeIcon1!=null||closeIcon2!=null)
             {
                 closeObj1.SetActive(false);
                 closeObj2.SetActive(false);
+                closeIcon1?.SetActive(false);
+                closeIcon2?.SetActive(false);
                 resultantObj.SetActive(false);
                 anim.speed = animSpeed;
                 anim.SetTrigger(animTrigger);
@@ -237,35 +268,38 @@ public class ObjectForceManager : MonoBehaviour
             //Debug.Log("Yanlış Değer");
         }
         
+        
     }
 
     private int SetForce(int _force,int forces)
     {
         if (id == 0)
         {
-            if (temp0 != 0)
-            {
-                forces -= temp0;
-            }
+            //if (temp0 != 0)
+            //{
+            //    forces -= temp0;
+            //}
             forces += _force;
             temp0 = _force;
         }
         else
         {
-            if (temp1 != 0)
-            {
-                forces -= temp1;
-            }
+            //if (temp1 != 0)
+            //{
+            //    forces -= temp1;
+            //}
             forces += _force;
             temp1 = _force;
         }
         return forces;
     }
 
-    private void CloseObjects(GameObject obj1,GameObject obj2)
+    private void CloseObjects(GameObject obj1,GameObject obj2,GameObject icn1,GameObject icn2)
     {
         closeObj1 = obj1;
         closeObj2 = obj2;
+        closeIcon1 = icn1;
+        closeIcon2 = icn2;
     }
 
     public void ReadResultantText(string _string)
@@ -316,7 +350,7 @@ public class ObjectForceManager : MonoBehaviour
         notificationPanel.SetActive(false);
     }
 
-    private void ResultantValueControl(int _resultantValue,GameObject obj1,GameObject obj2,string animString,bool negativeControl)
+    private void ResultantValueControl(int _resultantValue,GameObject obj1,GameObject obj2,GameObject icon1,GameObject icon2,string animString,bool negativeControl)
     {
         animTrigger = animString;
         if (negativeControl)
@@ -329,7 +363,7 @@ public class ObjectForceManager : MonoBehaviour
             animSpeed = _resultantValue;
             resultantValue = _resultantValue;
         }
-        CloseObjects(obj1, obj2);
+        CloseObjects(obj1, obj2,icon1,icon2);
     }
     public void ResultantIdControl(int _id)
     {
