@@ -22,6 +22,7 @@ public class ControlManager : MonoSingleton<ControlManager>
     [SerializeField] private Button retryButton;
     [SerializeField] private GameObject completePanel;
     [SerializeField] private List<Connection> connectionsList = new List<Connection>();
+    [SerializeField] private GameObject ConnectionMangerObject;
     void Start()
     {
         retryButton.onClick.AddListener(ResetScene);
@@ -92,6 +93,7 @@ public class ControlManager : MonoSingleton<ControlManager>
         if (connectionsList.Count<=0)
         {
             completePanel.gameObject.SetActive(true);
+            ConnectionMangerObject.SetActive(false);
         }
     }
 
